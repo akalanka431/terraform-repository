@@ -3,7 +3,7 @@ name: Build and Deploy Nginx Image to GKE
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   
