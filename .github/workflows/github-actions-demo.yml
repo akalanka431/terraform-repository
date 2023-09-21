@@ -24,7 +24,7 @@ jobs:
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
       with:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
-        project_id: Practice
+        project_id: steam-circlet-355619
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
@@ -48,7 +48,7 @@ jobs:
     # Push the docker image to GCP Cluster Registry 
     - name: Push Nginx Docker image to GCP container registry
       env:
-        PROJECT_ID: Practice
+        PROJECT_ID: steam-circlet-355619
         IMAGE_NAME: nginx
         TAG: latest
       run: |
