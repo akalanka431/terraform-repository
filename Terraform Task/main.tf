@@ -1,4 +1,4 @@
-# Define the GCP provider
+# Define the GCP providers
 provider "google" {
   project = var.gcp_project_id
   region  = "us-central1"
