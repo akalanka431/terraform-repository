@@ -1,10 +1,3 @@
-# Define the GCP providers
-provider "google" {
-  project = var.gcp_project_id
-  region  = "us-central1"
-  zone    = "us-central1-a"
-}
-
 # Define the GKE cluster
 resource "google_container_cluster" "gke_cluster" {
   name               = var.gke_cluster_name
@@ -32,14 +25,4 @@ data "google_container_cluster" "cluster" {
 resource "google_compute_address" "nginx" {
   name   = "nginx"
   region = "us-central1"
-}
-
-#output K8 endpoint
-output "kubernetes_endpoint" {
-  value = data.google_container_cluster.cluster.endpoint
-}
-
-#Output nginx ip
-output "nginx_external_ip" {
-  value = google_compute_address.nginx.address
 }
